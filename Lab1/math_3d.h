@@ -124,7 +124,7 @@ inline Vector3f operator*(const Vector3f& l, float f)
 class Matrix4f
 {
 public:
-	float m[4][4];
+	float matrix[4][4];
 
 	Matrix4f()
 	{
@@ -133,10 +133,10 @@ public:
 
 	inline void InitIdentity()
 	{
-		m[0][0] = 1.0f; m[0][1] = 0.0f; m[0][2] = 0.0f; m[0][3] = 0.0f;
-		m[1][0] = 0.0f; m[1][1] = 1.0f; m[1][2] = 0.0f; m[1][3] = 0.0f;
-		m[2][0] = 0.0f; m[2][1] = 0.0f; m[2][2] = 1.0f; m[2][3] = 0.0f;
-		m[3][0] = 0.0f; m[3][1] = 0.0f; m[3][2] = 0.0f; m[3][3] = 1.0f;
+		matrix[0][0] = 1.0f; matrix[0][1] = 0.0f; matrix[0][2] = 0.0f; matrix[0][3] = 0.0f;
+		matrix[1][0] = 0.0f; matrix[1][1] = 1.0f; matrix[1][2] = 0.0f; matrix[1][3] = 0.0f;
+		matrix[2][0] = 0.0f; matrix[2][1] = 0.0f; matrix[2][2] = 1.0f; matrix[2][3] = 0.0f;
+		matrix[3][0] = 0.0f; matrix[3][1] = 0.0f; matrix[3][2] = 0.0f; matrix[3][3] = 1.0f;
 	}
 
 	inline Matrix4f operator*(const Matrix4f& Right) const
@@ -145,10 +145,10 @@ public:
 
 		for (unsigned int i = 0; i < 4; i++) {
 			for (unsigned int j = 0; j < 4; j++) {
-				Ret.m[i][j] = m[i][0] * Right.m[0][j] +
-					m[i][1] * Right.m[1][j] +
-					m[i][2] * Right.m[2][j] +
-					m[i][3] * Right.m[3][j];
+				Ret.matrix[i][j] = matrix[i][0] * Right.matrix[0][j] +
+					matrix[i][1] * Right.matrix[1][j] +
+					matrix[i][2] * Right.matrix[2][j] +
+					matrix[i][3] * Right.matrix[3][j];
 			}
 		}
 

@@ -154,12 +154,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="camera.h" />
+    <ClInclude Include="Light.h" />
     <ClInclude Include="math_3d.h" />
     <ClInclude Include="ObjLoader.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="pipeline.h" />
+    <ClInclude Include="transform.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="texture.h" />
     <ClInclude Include="util.h" />
   </ItemGroup>
   <ItemGroup>
@@ -167,6 +167,7 @@
     <ClCompile Include="Lab1.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Light.cpp" />
     <ClCompile Include="math_3d.cpp" />
     <ClCompile Include="ObjLoader.cpp" />
     <ClCompile Include="pch.cpp">
@@ -175,8 +176,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="pipeline.cpp" />
-    <ClCompile Include="texture.cpp" />
+    <ClCompile Include="transform.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Lab1.rc" />

@@ -24,19 +24,19 @@
     <ClInclude Include="math_3d.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="pipeline.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="util.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="texture.h">
+    <ClInclude Include="ObjLoader.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="ObjLoader.h">
+    <ClInclude Include="Light.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="transform.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -50,16 +50,16 @@
     <ClCompile Include="math_3d.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="pipeline.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="camera.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="texture.cpp">
+    <ClCompile Include="ObjLoader.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="ObjLoader.cpp">
+    <ClCompile Include="Light.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="transform.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
