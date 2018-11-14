@@ -18,8 +18,8 @@ public:
 
 private:
 	std::string m_fileName;
-	GLenum m_textureTarget;
-	GLuint m_textureObj;
+	GLenum m_textureTarget; //纹理单元
+	GLuint m_textureObj; //纹理对象
 	Magick::Image* m_pImage;
 	Magick::Blob m_blob;
 };

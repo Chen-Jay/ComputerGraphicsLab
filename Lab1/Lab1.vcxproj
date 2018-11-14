@@ -74,15 +74,23 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Program Files\ImageMagick-7.0.8-Q16\include\MagickWand;C:\Program Files\ImageMagick-7.0.8-Q16\include\MagickCore;C:\Program Files\ImageMagick-7.0.8-Q16\include\Magick++;C:\Program Files\ImageMagick-7.0.8-Q16\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files\ImageMagick-7.0.8-Q16\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Program Files\ImageMagick-7.0.8-Q16\include\MagickWand;C:\Program Files\ImageMagick-7.0.8-Q16\include\MagickCore;C:\Program Files\ImageMagick-7.0.8-Q16\include\Magick++;C:\Program Files\ImageMagick-7.0.8-Q16\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files\ImageMagick-7.0.8-Q16\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\Program Files\ImageMagick-7.0.8-Q16\include\MagickWand;C:\Program Files\ImageMagick-7.0.8-Q16\include\MagickCore;C:\Program Files\ImageMagick-7.0.8-Q16\include\Magick++;C:\Program Files\ImageMagick-7.0.8-Q16\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files\ImageMagick-7.0.8-Q16\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\Program Files\ImageMagick-7.0.8-Q16\include\MagickWand;C:\Program Files\ImageMagick-7.0.8-Q16\include\MagickCore;C:\Program Files\ImageMagick-7.0.8-Q16\include\Magick++;C:\Program Files\ImageMagick-7.0.8-Q16\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files\ImageMagick-7.0.8-Q16\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -93,10 +101,13 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>C:\Program Files\ImageMagick-7.0.8-Q16\include\MagickWand;C:\Program Files\ImageMagick-7.0.8-Q16\include\MagickCore;C:\Program Files\ImageMagick-7.0.8-Q16\include\Magick++;C:\Program Files\ImageMagick-7.0.8-Q16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Program Files\ImageMagick-7.0.8-Q16\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>CORE_RL_Magick++_.lib;CORE_RL_MagickCore_.lib;CORE_RL_MagickWand_.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -108,10 +119,13 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>C:\Program Files\ImageMagick-7.0.8-Q16\include\MagickWand;C:\Program Files\ImageMagick-7.0.8-Q16\include\MagickCore;C:\Program Files\ImageMagick-7.0.8-Q16\include\Magick++;C:\Program Files\ImageMagick-7.0.8-Q16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Program Files\ImageMagick-7.0.8-Q16\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>CORE_RL_Magick++_.lib;CORE_RL_MagickCore_.lib;CORE_RL_MagickWand_.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -125,12 +139,15 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>C:\Program Files\ImageMagick-7.0.8-Q16\include\MagickWand;C:\Program Files\ImageMagick-7.0.8-Q16\include\MagickCore;C:\Program Files\ImageMagick-7.0.8-Q16\include\Magick++;C:\Program Files\ImageMagick-7.0.8-Q16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Program Files\ImageMagick-7.0.8-Q16\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>CORE_RL_Magick++_.lib;CORE_RL_MagickCore_.lib;CORE_RL_MagickWand_.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -144,12 +161,15 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>C:\Program Files\ImageMagick-7.0.8-Q16\include\MagickWand;C:\Program Files\ImageMagick-7.0.8-Q16\include\MagickCore;C:\Program Files\ImageMagick-7.0.8-Q16\include\Magick++;C:\Program Files\ImageMagick-7.0.8-Q16\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Program Files\ImageMagick-7.0.8-Q16\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>CORE_RL_Magick++_.lib;CORE_RL_MagickCore_.lib;CORE_RL_MagickWand_.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -158,6 +178,7 @@
     <ClInclude Include="math_3d.h" />
     <ClInclude Include="ObjLoader.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="texture.h" />
     <ClInclude Include="transform.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="util.h" />
@@ -176,6 +197,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="texture.cpp" />
     <ClCompile Include="transform.cpp" />
   </ItemGroup>
   <ItemGroup>
