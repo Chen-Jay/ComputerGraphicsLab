@@ -6,8 +6,9 @@ using std::vector;
 struct Vertex
 {
 	Vector3f m_pos;	
-	Vector3f m_nor;
 	Vector2f m_tex;
+	Vector3f m_nor;
+	
 
 	inline Vertex()
 	{

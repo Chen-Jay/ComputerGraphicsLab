@@ -51,14 +51,14 @@ void ObjLoader::load(const char * filename)
 				Vector3f vector(x, y, z);
 				VertexBuffer.push_back(Vertex(vector));
 			}
-			else if (token == "vt")
+			else if (token == "vt") //ÎÆÀí×ø±ê
 			{
 				float x;
 				float y;
 				for (int i = 0; i < 2; i++)
 				{
-					string data = token.substr(0, token.find(" "));
-					token = token.substr(token.find(" ") + 1, token.length());
+					string data = line.substr(0, line.find(" "));
+					line = line.substr(line.find(" ") + 1, line.length());
 					stringstream ss;
 					ss << data;
 					if (i == 0)
@@ -192,6 +192,7 @@ void ObjLoader::load(const char * filename)
 						AllVertexBuffer.push_back(Vertex(VertexBuffer[z_vertex].m_pos, NormalBuffer[z_normal], TextureBuffer[z_texture]));
 					}
 				}
+
 			}
 			else
 			{
@@ -200,16 +201,6 @@ void ObjLoader::load(const char * filename)
 		}
 
 		f.close();
-		//std::cout << "hello";
-		//for (int i = 0; i < VertexIndexBuffer.size(); i++)
-		//{
-		//	std::cout << VertexIndexBuffer[i] << " ";
-		//}
-		//std::cout << "\n\n";
-		//for (int i = 0; i < VertexBuffer.size(); i++)
-		//{
-		//	VertexBuffer[i].m_pos.Print();
-		//}
 	}
 }
 

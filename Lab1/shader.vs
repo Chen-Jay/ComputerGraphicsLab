@@ -1,8 +1,8 @@
 #version 330
 
 layout(location = 0) in vec3 Position;	//传入的顶点坐标	
-layout(location = 2) in vec2 TexturePosition;	//传入的纹理坐标
-layout(location = 1) in vec3 Normal; //传入的顶点法向量
+layout(location = 1) in vec2 TexturePosition;	//传入的纹理坐标
+layout(location = 2) in vec3 Normal; //传入的顶点法向量
 
 //传入的变换到眼睛坐标系的变换矩阵
 uniform mat4 gWVP;
