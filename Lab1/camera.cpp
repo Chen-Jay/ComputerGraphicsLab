@@ -2,7 +2,7 @@
 #include <GL/freeglut.h>
 #include "camera.h"
 #include <iostream>
-const static float STEP_SCALE = 1.0f;	//步幅，用于在移动摄像机时，每一次按键所对应的移动长度
+const static float STEP_SCALE = 0.2f;	//步幅，用于在移动摄像机时，每一次按键所对应的移动长度
 const static int MARGIN = 10;
 
 
@@ -142,9 +142,9 @@ void Camera::OnMouse(int x, int y)
 	m_mousePos.x = x;
 	m_mousePos.y = y;
 
-	m_AngleH += (float)DeltaX / 20.0f;	//根据x的改变量来改变水平倾角（其中20.0相当于鼠标的灵敏度，即改变单位长度的坐标，对应多少的角度）
+	m_AngleH += (float)DeltaX / 10.0f;	//根据x的改变量来改变水平倾角（其中20.0相当于鼠标的灵敏度，即改变单位长度的坐标，对应多少的角度）
 
-	m_AngleV += (float)DeltaY / 20.0f;	//根据y的改变量来改变垂直倾角
+	m_AngleV += (float)DeltaY / 10.0f;	//根据y的改变量来改变垂直倾角
 
 	//考虑是否到达水平方向的屏幕边缘，如果是，则把对应状态设置为TRUE，则会在渲染时自动改变方向
 	if (DeltaX == 0) {
@@ -184,23 +184,23 @@ void Camera::OnRender()
 	bool ShouldUpdate = false;
 
 	if (m_OnLeftEdge) {
-		m_AngleH -= 1.0f;
+		m_AngleH -= 0.2f;
 		ShouldUpdate = true;
 	}
 	else if (m_OnRightEdge) {
-		m_AngleH += 1.0f;
+		m_AngleH += 0.2f;
 		ShouldUpdate = true;
 	}
 
 	if (m_OnUpperEdge) {
 		if (m_AngleV > -90.0f) {
-			m_AngleV -= 1.0f;
+			m_AngleV -= 0.2f;
 			ShouldUpdate = true;
 		}
 	}
 	else if (m_OnLowerEdge) {
 		if (m_AngleV < 90.0f) {
-			m_AngleV += 1.0f;
+			m_AngleV += 0.2f;
 			ShouldUpdate = true;
 		}
 	}

@@ -5,7 +5,7 @@
 #include <string>
 
 #include <GL/glew.h>
-#include <Magick++/Magick++.h>
+//#include <Magick++/Magick++.h>
 
 class Texture
 {
@@ -20,8 +20,8 @@ private:
 	std::string m_fileName;
 	GLenum m_textureTarget; //纹理单元
 	GLuint m_textureObj; //纹理对象
-	Magick::Image* m_pImage;
-	Magick::Blob m_blob;
+	//Magick::Image* m_pImage;
+	//Magick::Blob m_blob;
 };
 
 
