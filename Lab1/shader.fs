@@ -83,7 +83,7 @@ vec4 CaculateSpecularColor_pointLight(PointLight light, vec3 PointPosition, vec3
 	float SpecularFactor = dot(VertexToEye, LightReflect);
 
 	//如果最后的光强系数大于0，说明眼睛和反射光线在同一方向，则计算对一个的镜面反射光光强，如果小于等于零，说明眼睛不再反射光影响范围内，因此将反射光光强赋为0
-	if (SpecularFactor > 0) 
+	if (SpecularFactor > 0 && SpecularFactor>cos(10)) 
 	{
 		if (dot(NormalInWorld, VertexToEye) <= 0)
 		{
