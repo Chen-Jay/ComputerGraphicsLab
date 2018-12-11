@@ -10,16 +10,17 @@
 class Texture
 {
 public:
-	Texture(GLenum TextureTarget, const std::string& FileName);
+	Texture(GLenum TextureTarget, const std::string& FileName, GLenum TextureUnit);
 
 	bool Load();
 
 	void Bind(GLenum TextureUnit);
 
 private:
-	std::string m_fileName;
-	GLenum m_textureTarget; //纹理单元
-	GLuint m_textureObj; //纹理对象
+	std::string fileName;
+	GLenum textureTarget; //纹理目标
+	GLuint textureObj; //纹理对象
+	GLenum textureUnit; //纹理单元
 	//Magick::Image* m_pImage;
 	//Magick::Blob m_blob;
 };

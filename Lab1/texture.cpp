@@ -8,10 +8,11 @@
 *  FileName 纹理图片的文件名
 */
 
-Texture::Texture(GLenum TextureTarget, const std::string& FileName)
+Texture::Texture(GLenum TextureTarget, const std::string& FileName, GLenum TextureUnit)
 {
-	m_textureTarget = TextureTarget;
-	m_fileName = FileName;
+	textureTarget = TextureTarget;
+	fileName = FileName;
+	textureUnit = TextureUnit;
 	//m_pImage = NULL;
 }
 
@@ -26,31 +27,35 @@ bool Texture::Load()
 		std::cout << "Error loading texture '" << m_fileName << "': " << Error.what() << std::endl;
 		return false;
 	}*/
+	glActiveTexture(textureUnit);
+
 	int width, height,channels;
-	unsigned char* image = SOIL_load_image(m_fileName.c_str(), &width, &height, &channels, SOIL_LOAD_RGBA);
+	unsigned char* image = SOIL_load_image(fileName.c_str(), &width, &height, &channels, SOIL_LOAD_RGBA);
 
-	glGenTextures(1, &m_textureObj);  //利用图片的blob产生纹理对象，数量为1
+	glGenTextures(1, &textureObj);  //利用图片的blob产生纹理对象，数量为1
 
-	glBindTexture(m_textureTarget, m_textureObj); //将纹理对象绑定至特定的纹理单元上
+	glBindTexture(textureTarget, textureObj); //将纹理对象绑定至特定的纹理单元上
 
 	//glTexImage2D(m_textureTarget, 0, GL_RGB, m_pImage->columns(), m_pImage->rows(), -0.5, GL_RGBA, GL_UNSIGNED_BYTE, m_blob.data()); //加载该纹理对象的数据信息到纹理对象的2d目标上
 	
 	if (channels == 3)
 	{
-		glTexImage2D(m_textureTarget, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image);
+		glTexImage2D(textureTarget, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image);
 	}
 	else if (channels == 4)
 	{
-		glTexImage2D(m_textureTarget, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image);
+		glTexImage2D(textureTarget, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image);
 	}
 	
-	glGenerateMipmap(m_textureTarget);
+	glGenerateMipmap(textureTarget);
 
 	//使用线性插值来做过滤，避免物体过大过小的时候，纹素变形
-	glTexParameterf(m_textureTarget, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	glTexParameterf(m_textureTarget, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameterf(textureTarget, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameterf(textureTarget, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameteri(textureTarget, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
+	glTexParameteri(textureTarget, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
 
-	glBindTexture(m_textureTarget, 0); //解除纹理对象和纹理目标之间的绑定
+	glBindTexture(textureTarget, 0); //解除纹理对象和纹理目标之间的绑定
 	return true;
 }
 
@@ -58,5 +63,5 @@ bool Texture::Load()
 void Texture::Bind(GLenum TextureUnit)
 {
 	glActiveTexture(TextureUnit);
-	glBindTexture(m_textureTarget, m_textureObj);
+	glBindTexture(textureTarget, textureObj);
 }

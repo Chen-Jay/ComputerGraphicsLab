@@ -205,7 +205,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="fshader1.glsl" />
+    <None Include="fshader2.glsl" />
     <None Include="vshader1.glsl" />
+    <None Include="vshader2.glsl" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\Users\39471\Desktop\toma2x.png" />

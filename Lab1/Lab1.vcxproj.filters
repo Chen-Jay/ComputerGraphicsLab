@@ -81,6 +81,12 @@
     <None Include="fshader1.glsl">
       <Filter>源文件</Filter>
     </None>
+    <None Include="vshader2.glsl">
+      <Filter>源文件</Filter>
+    </None>
+    <None Include="fshader2.glsl">
+      <Filter>源文件</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\Users\39471\Desktop\toma2x.png">
