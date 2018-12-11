@@ -31,8 +31,10 @@ bool Texture::Load()
 	glActiveTexture(textureUnit);
 
 	int width, height,channels;
-	unsigned char* image = SOIL_load_image(fileName.c_str(), &width, &height, &channels, SOIL_LOAD_RGBA);
-
+	unsigned char* image=nullptr;
+	image = SOIL_load_image(fileName.c_str(), &width, &height, &channels, SOIL_LOAD_RGBA);
+	
+	
 	glGenTextures(1, &textureObj);  //利用图片的blob产生纹理对象，数量为1
 
 	glBindTexture(textureTarget, textureObj); //将纹理对象绑定至特定的纹理单元上

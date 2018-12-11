@@ -208,6 +208,8 @@
   <ItemGroup>
     <None Include="fshader1.glsl" />
     <None Include="fshader2.glsl" />
+    <None Include="fshader3.glsl" />
+    <None Include="vshader3.glsl" />
     <None Include="vshader1.glsl" />
     <None Include="vshader2.glsl" />
   </ItemGroup>
