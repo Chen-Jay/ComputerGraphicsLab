@@ -204,8 +204,8 @@
     <ResourceCompile Include="Lab1.rc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="shader.fs" />
-    <None Include="shader.vs" />
+    <None Include="fshader.glsl" />
+    <None Include="vshader.glsl" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\Users\39471\Desktop\toma2x.png" />

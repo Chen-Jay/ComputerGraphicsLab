@@ -1,6 +1,13 @@
 #include <iostream>
 #include "texture.h"
 #include "SOIL/SOIL.h"
+
+/**
+* 构造函数
+*  TextureTarget  纹理的目标 GL_TEXTURE_2D之类的
+*  FileName 纹理图片的文件名
+*/
+
 Texture::Texture(GLenum TextureTarget, const std::string& FileName)
 {
 	m_textureTarget = TextureTarget;
@@ -19,7 +26,6 @@ bool Texture::Load()
 		std::cout << "Error loading texture '" << m_fileName << "': " << Error.what() << std::endl;
 		return false;
 	}*/
-
 	int width, height,channels;
 	unsigned char* image = SOIL_load_image(m_fileName.c_str(), &width, &height, &channels, SOIL_LOAD_RGBA);
 
@@ -44,9 +50,11 @@ bool Texture::Load()
 	glTexParameterf(m_textureTarget, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameterf(m_textureTarget, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
+	glBindTexture(m_textureTarget, 0); //解除纹理对象和纹理目标之间的绑定
 	return true;
 }
 
+//将当前的texture对象（内含纹理目标和纹理对象）绑定到特定的纹理单元上
 void Texture::Bind(GLenum TextureUnit)
 {
 	glActiveTexture(TextureUnit);

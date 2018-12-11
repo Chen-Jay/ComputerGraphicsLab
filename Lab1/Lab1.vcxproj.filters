@@ -75,10 +75,10 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="shader.vs">
+    <None Include="fshader.glsl">
       <Filter>源文件</Filter>
     </None>
-    <None Include="shader.fs">
+    <None Include="vshader.glsl">
       <Filter>源文件</Filter>
     </None>
   </ItemGroup>
