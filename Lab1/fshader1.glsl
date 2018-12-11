@@ -13,6 +13,8 @@ out vec4 FragColor;
 
 uniform sampler2D gSampler;	//传入的采样器全局变量
 
+float shininess=5; //影响镜面反射效果
+
 //平行光源
 struct DirectionalLight
 {

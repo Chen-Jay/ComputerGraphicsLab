@@ -184,23 +184,23 @@ void Camera::OnRender()
 	bool ShouldUpdate = false;
 
 	if (m_OnLeftEdge) {
-		m_AngleH -= 0.2f;
+		m_AngleH -= 0.8f;
 		ShouldUpdate = true;
 	}
 	else if (m_OnRightEdge) {
-		m_AngleH += 0.2f;
+		m_AngleH += 0.8f;
 		ShouldUpdate = true;
 	}
 
 	if (m_OnUpperEdge) {
 		if (m_AngleV > -90.0f) {
-			m_AngleV -= 0.2f;
+			m_AngleV -= 0.8f;
 			ShouldUpdate = true;
 		}
 	}
 	else if (m_OnLowerEdge) {
 		if (m_AngleV < 90.0f) {
-			m_AngleV += 0.2f;
+			m_AngleV += 0.8f;
 			ShouldUpdate = true;
 		}
 	}

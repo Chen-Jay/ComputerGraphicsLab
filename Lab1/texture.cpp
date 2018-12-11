@@ -8,11 +8,12 @@
 *  FileName 纹理图片的文件名
 */
 
-Texture::Texture(GLenum TextureTarget, const std::string& FileName, GLenum TextureUnit)
+Texture::Texture(GLenum TextureTarget, const std::string& FileName, GLenum TextureUnit, unsigned int textureUnitNumber_)
 {
 	textureTarget = TextureTarget;
 	fileName = FileName;
 	textureUnit = TextureUnit;
+	textureUnitNumber = textureUnitNumber_;
 	//m_pImage = NULL;
 }
 
@@ -64,4 +65,9 @@ void Texture::Bind(GLenum TextureUnit)
 {
 	glActiveTexture(TextureUnit);
 	glBindTexture(textureTarget, textureObj);
+}
+
+unsigned int Texture::getTextureUnitNumber()
+{
+	return textureUnitNumber;
 }
