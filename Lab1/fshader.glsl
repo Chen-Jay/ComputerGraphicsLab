@@ -16,7 +16,7 @@ uniform sampler2D gSampler;	//传入的采样器全局变量
 //平行光源
 struct DirectionalLight
 {
-	vec3 Color;//红光
+	vec3 Color;//光源颜色
 	float AmbientIntensity; //环境光系数
 	float DiffuseIntensity;//漫射光光强
 	float SpecularIntensity;//镜面反射光光强
@@ -131,38 +131,38 @@ vec4 CaculateSpecularColor_directionLight(DirectionalLight light, vec3 PointPosi
 void main()
 {
 	
-	//位于(0,1.5,0)的红色点光源
+	//红色点光源
 	PointLight RedPointLight;
-	RedPointLight.Color=vec3(1.0,0.0,0.0);
-	RedPointLight.AmbientIntensity=0.2;
+	RedPointLight.Color=vec3(1,1,1);
+	RedPointLight.AmbientIntensity=0.3;
 	RedPointLight.DiffuseIntensity=0.8;
 	RedPointLight.SpecularIntensity= 0.8;
 	RedPointLight.Attenuation_constant= 0.2;
 	RedPointLight.Attenuation_liner= 0.1;
 	RedPointLight.Attenuation_exp= 0.1;
-	RedPointLight.position=vec3(0.0,0.0,3.0);
+	RedPointLight.position=vec3(0.0,9.0,0.0);
 
-	//位于(-1.5,0,0)的绿色点光源
+	//绿色点光源
 	PointLight GreenPointLight;
-	GreenPointLight.Color=vec3(0.0,1.0,0.0);
-	GreenPointLight.AmbientIntensity= 0.2;
+	GreenPointLight.Color=vec3(1,1,1);
+	GreenPointLight.AmbientIntensity= 0.3;
 	GreenPointLight.DiffuseIntensity= 0.8;
 	GreenPointLight.SpecularIntensity= 0.8;
 	GreenPointLight.Attenuation_constant= 0.2;
 	GreenPointLight.Attenuation_liner= 0.1;
 	GreenPointLight.Attenuation_exp= 0.1;
-	GreenPointLight.position=vec3(-5.0,0.0,0.0);
+	GreenPointLight.position=vec3(0.0,9.0,0.0);
 
-	//位于(0,0,-1.5)的蓝色点光源
+	//蓝色点光源
 	PointLight BluePointLight;
-	BluePointLight.Color=vec3(0.0,0.0,1.0);
-	BluePointLight.AmbientIntensity= 0.2;
+	BluePointLight.Color=vec3(1.0,1.0,1.0);
+	BluePointLight.AmbientIntensity= 0.3;
 	BluePointLight.DiffuseIntensity=0.8;
 	BluePointLight.SpecularIntensity=0.8;
 	BluePointLight.Attenuation_constant= 0.2;
 	BluePointLight.Attenuation_liner= 0.1;
 	BluePointLight.Attenuation_exp= 0.1;
-	BluePointLight.position=vec3(0.0,6.0,0.0);
+	BluePointLight.position=vec3(0.0,9.0,0.0);
 
 	vec4 MatarialColor = vec4(1.0,1.0,1.0,1.0);//定义材质颜色
 
@@ -186,7 +186,7 @@ void main()
 	//		DiffuseColor1 + DiffuseColor2 + DiffuseColor3+
 	//		SpecularColor1+ SpecularColor2+ SpecularColor3);
 
-	FragColor = texture2D(gSampler, TextureAfterTrans.st) * (
+	FragColor = texture2D(gSampler, TextureAfterTrans.st) * MatarialColor *(
 			AmbientColor + 
 			DiffuseColor1 + DiffuseColor2 + DiffuseColor3 +
 			SpecularColor1 + SpecularColor2 + SpecularColor3);

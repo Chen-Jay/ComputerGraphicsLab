@@ -2,7 +2,7 @@
 #include <GL/freeglut.h>
 #include "camera.h"
 #include <iostream>
-const static float STEP_SCALE = 0.2f;	//步幅，用于在移动摄像机时，每一次按键所对应的移动长度
+const static float STEP_SCALE = 0.8f;	//步幅，用于在移动摄像机时，每一次按键所对应的移动长度
 const static int MARGIN = 10;
 
 
@@ -184,23 +184,23 @@ void Camera::OnRender()
 	bool ShouldUpdate = false;
 
 	if (m_OnLeftEdge) {
-		m_AngleH -= 0.2f;
+		m_AngleH -= 0.8f;
 		ShouldUpdate = true;
 	}
 	else if (m_OnRightEdge) {
-		m_AngleH += 0.2f;
+		m_AngleH += 0.8f;
 		ShouldUpdate = true;
 	}
 
 	if (m_OnUpperEdge) {
 		if (m_AngleV > -90.0f) {
-			m_AngleV -= 0.2f;
+			m_AngleV -= 0.8f;
 			ShouldUpdate = true;
 		}
 	}
 	else if (m_OnLowerEdge) {
 		if (m_AngleV < 90.0f) {
-			m_AngleV += 0.2f;
+			m_AngleV += 0.8f;
 			ShouldUpdate = true;
 		}
 	}
