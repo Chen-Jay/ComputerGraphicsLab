@@ -21,14 +21,14 @@ out vec3 EyePosition;
 
 void main()
 {
-	//顶点位置
+	//顶点位置输出
 	gl_Position = gWVP * vec4(Position, 1.0);
 
 	//光照相关
-	PointPosition = (gWorld*vec4(Position, 0.0)).xyz;
-	NormalInWorld = (gWorld*vec4(Normal, 0.0)).xyz;
-	EyePosition = (vec4(gEye, 0.0)).xyz;
+	PointPosition = (vec4(Position, 0.0)).xyz; //世界坐标系顶点坐标传递
+	NormalInWorld = (gWorld*vec4(Normal, 0.0)).xyz;//世界坐标系法向量传递
+	EyePosition = (vec4(gEye, 0.0)).xyz;//世界坐标系眼睛坐标传递
 
-	TextureAfterTrans = TexturePosition;
+	TextureAfterTrans = TexturePosition;//纹理坐标系坐标传递
 	//Color = vec4(clamp(Position, 0.0, 1.0), 1.0);
 }
